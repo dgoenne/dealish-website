@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dealISH – Was essen wir heute?</title>
+  <meta name="description" content="dealISH schlägt dir jeden Tag vor, was du essen kannst. Abgestimmt auf dein Leben, deine Küche, dein Tempo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --apricot:        #E8A87C;
+      --apricot-light:  #F5D5B8;
+      --apricot-dark:   #C4784F;
+      --text:           #1a1a1a;
+      --text-secondary: #6b6b6b;
+      --bg:             #fdf8f4;
+      --white:          #ffffff;
+      --radius:         16px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(253, 248, 244, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo span {
+      color: var(--apricot-dark);
+    }
+
+    .nav-contact {
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-contact:hover { color: var(--apricot-dark); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 40px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, var(--apricot-light) 0%, transparent 70%);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: -150px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, var(--apricot-light) 0%, transparent 70%);
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--apricot-light);
+      color: var(--apricot-dark);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 7vw, 84px);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -2px;
+      max-width: 820px;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--apricot-dark);
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2.2vw, 20px);
+      color: var(--text-secondary);
+      font-weight: 300;
+      line-height: 1.65;
+      max-width: 520px;
+      margin: 28px auto 0;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .hero-quote {
+      margin-top: 56px;
+      padding: 28px 36px;
+      background: var(--white);
+      border-radius: var(--radius);
+      max-width: 520px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.06);
+      animation: fadeUp 0.6s 0.3s ease both;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-quote p {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .hero-quote cite {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      font-style: normal;
+      color: var(--text-secondary);
+    }
+
+    .hero-store {
+      margin-top: 48px;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+
+    .store-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--text);
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .store-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .store-btn.coming {
+      background: var(--white);
+      color: var(--text-secondary);
+      border: 1px solid #e0e0e0;
+      cursor: default;
+    }
+
+    .store-btn.coming:hover { transform: none; box-shadow: none; }
+
+    .store-icon { font-size: 20px; }
+
+    /* ── MOCKUP PLACEHOLDER ── */
+    .mockup-section {
+      padding: 40px 40px 100px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .mockup-placeholder {
+      width: 280px;
+      height: 560px;
+      background: var(--white);
+      border-radius: 40px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mockup-placeholder::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: var(--apricot);
+      border-radius: 40px 40px 0 0;
+    }
+
+    .mockup-placeholder-icon {
+      font-size: 48px;
+    }
+
+    .mockup-placeholder-text {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-align: center;
+      padding: 0 32px;
+      line-height: 1.5;
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--apricot-dark);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      max-width: 500px;
+      margin-bottom: 56px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.09);
+    }
+
+    .feature-emoji {
+      font-size: 28px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .feature-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .feature-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how {
+      background: var(--text);
+      color: var(--white);
+      padding: 100px 40px;
+    }
+
+    .how-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .how .section-label { color: var(--apricot); }
+
+    .how .section-title {
+      color: var(--white);
+      margin-bottom: 64px;
+    }
+
+    .how-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+    }
+
+    .how-step {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .step-number {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--apricot);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .step-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 48px 40px;
+      border-top: 1px solid #ece8e3;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .footer-logo span { color: var(--apricot-dark); }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    .footer-copy {
+      font-size: 12px;
+      color: #bbb;
+      width: 100%;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .hero { padding: 100px 20px 60px; }
+      .hero-quote { padding: 20px 24px; }
+      .features { padding: 60px 20px; }
+      .how { padding: 72px 20px; }
+      footer { padding: 40px 20px; }
+      .mockup-section { padding: 20px 20px 72px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">deal<span>ISH</span></div>
+    <a class="nav-contact" href="mailto:hallo@getdealish.app">hallo@getdealish.app</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">Bald im App Store</div>
+    <h1>Was essen wir<br /><em>heute?</em></h1>
+    <p class="hero-sub">
+      dealISH schlägt dir jeden Tag vor, was du essen kannst.<br />
+      Abgestimmt auf dein Leben, deine Küche, dein Tempo.
+    </p>
+
+    <div class="hero-quote">
+      <p>„Ich lass mir seit Wochen von einer App sagen was ich heute esse. Klingt komisch. Passt fast immer."</p>
+      <cite>— So fühlt sich dealISH an</cite>
+    </div>
+
+    <div class="hero-store">
+      <a class="store-btn coming" href="#">
+        <span class="store-icon">🍎</span>
+        <span>App Store – coming soon</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- MOCKUP -->
+  <div class="mockup-section">
+    <div class="mockup-placeholder">
+      <span class="mockup-placeholder-icon">📱</span>
+      <p class="mockup-placeholder-text">Screenshots folgen in Kürze</p>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <p class="section-label">Was dealISH kann</p>
+    <h2 class="section-title">Mehr als nur ein Vorschlag.</h2>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-emoji">🌤️</span>
+        <h3 class="feature-title">Wetter & Saison</h3>
+        <p class="feature-desc">dealISH schaut wie draußen gerade ist und schlägt passende Gerichte vor. Kein Schmorgericht wenn es 28° hat.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-emoji">🏃</span>
+        <h3 class="feature-title">Sport berücksichtigt</h3>
+        <p class="feature-desc">Sporttage verändern was du essen solltest. dealISH rechnet das automatisch mit ein.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-emoji">🍷</span>
+        <h3 class="feature-title">Weinempfehlung</h3>
+        <p class="feature-desc">Zum Gericht passende Weinempfehlung – smart, täglich oder manuell. Für die Abende die es brauchen.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-emoji">🔥</span>
+        <h3 class="feature-title">Grilltage</h3>
+        <p class="feature-desc">Warmer Tag, Wochenende, Grill raus. dealISH erkennt das und schlägt Grillgerichte vor wenn es passt.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-emoji">👨‍👩‍👧</span>
+        <h3 class="feature-title">Familie & Haushalt</h3>
+        <p class="feature-desc">Ob allein, zu zweit oder mit Kindern – die Vorschläge passen sich deinem Haushalt an.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-emoji">🗓️</span>
+        <h3 class="feature-title">Wochenplan</h3>
+        <p class="feature-desc">Sieben Tage vorausgeplant, aber flexibel. Tausch was nicht passt – die App lernt mit.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <div class="how-inner">
+      <p class="section-label">So funktioniert es</p>
+      <h2 class="section-title">In drei Schritten zu deinem Abendessen.</h2>
+
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Profil einrichten</h3>
+          <p class="step-desc">Einmal kurz sagen wer du bist, was du magst und wie dein Alltag aussieht. Dauert fünf Minuten.</p>
+        </div>
+        <div class="how-step">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Vorschläge bekommen</h3>
+          <p class="step-desc">dealISH schlägt täglich vor was du essen könntest. Abgestimmt auf Wetter, Sport, Haushalt und Saison.</p>
+        </div>
+        <div class="how-step">
+          <div class="step-number">3</div>
+          <h3 class="step-title">Abends kurz rückmelden</h3>
+          <p class="step-desc">Hat es gepasst? Eine kurze Rückmeldung am Abend hilft der App beim nächsten Mal noch besser zu werden.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">deal<span>ISH</span></div>
+    <div class="footer-links">
+      <a href="https://www.iubenda.com/privacy-policy/76317912" target="_blank" rel="noopener">Datenschutzerklärung</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="mailto:hallo@getdealish.app">Kontakt</a>
+    </div>
+    <p class="footer-copy">© 2026 Dennis Göntgens · Johanniterweg 48 · 41065 Mönchengladbach · hallo@getdealish.app</p>
+  </footer>
+
+</body>
+</html>

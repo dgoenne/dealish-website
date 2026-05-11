@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum – dealISH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --apricot:       #E8A87C;
+      --apricot-dark:  #C4784F;
+      --text:          #1a1a1a;
+      --text-secondary:#6b6b6b;
+      --bg:            #fdf8f4;
+      --white:         #ffffff;
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    nav {
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ece8e3;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--apricot-dark); }
+    .nav-back {
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+    .nav-back:hover { color: var(--text); }
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 40px;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 48px;
+    }
+    h2 {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--apricot-dark);
+      margin-top: 40px;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    a { color: var(--apricot-dark); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer {
+      padding: 40px;
+      border-top: 1px solid #ece8e3;
+      text-align: center;
+      font-size: 12px;
+      color: #bbb;
+    }
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      main { padding: 60px 20px; }
+      footer { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="/">deal<span>ISH</span></a>
+    <a class="nav-back" href="/">← Zurück</a>
+  </nav>
+
+  <main>
+    <h1>Impressum</h1>
+
+    <h2>Angaben gemäß § 5 TMG</h2>
+    <p>
+      Dennis Göntgens<br />
+      Johanniterweg 48<br />
+      41065 Mönchengladbach<br />
+      Deutschland
+    </p>
+
+    <h2>Kontakt</h2>
+    <p>
+      E-Mail: <a href="mailto:hallo@getdealish.app">hallo@getdealish.app</a>
+    </p>
+
+    <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+    <p>
+      Dennis Göntgens<br />
+      Johanniterweg 48<br />
+      41065 Mönchengladbach
+    </p>
+
+    <h2>Haftungsausschluss</h2>
+    <p>
+      Die Inhalte dieser Seite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
+    </p>
+
+    <h2>Datenschutz</h2>
+    <p>
+      Informationen zum Datenschutz findest du in unserer <a href="https://www.iubenda.com/privacy-policy/76317912" target="_blank" rel="noopener">Datenschutzerklärung</a>.
+    </p>
+  </main>
+
+  <footer>
+    © 2026 Dennis Göntgens · dealISH
+  </footer>
+</body>
+</html>
