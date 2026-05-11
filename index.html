@@ -411,6 +411,71 @@
       width: 100%;
     }
 
+    /* ── WAITLIST ── */
+    .waitlist {
+      margin-top: 48px;
+      width: 100%;
+      max-width: 420px;
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+
+    .waitlist-form {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .waitlist-input {
+      flex: 1;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid #e0e0e0;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .waitlist-input:focus { border-color: var(--apricot-dark); }
+    .waitlist-input::placeholder { color: #bbb; }
+
+    .waitlist-btn {
+      padding: 14px 22px;
+      border-radius: 12px;
+      border: none;
+      background: var(--apricot-dark);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .waitlist-btn:hover { background: #b36a42; transform: translateY(-1px); }
+    .waitlist-btn:disabled { opacity: 0.6; cursor: default; transform: none; }
+
+    .waitlist-hint {
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
+    .waitlist-success {
+      display: none;
+      padding: 14px 20px;
+      background: #f0faf4;
+      border-radius: 12px;
+      border: 1px solid #b6e8c8;
+      font-size: 14px;
+      color: #2d7a4f;
+      text-align: center;
+    }
+
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
@@ -451,21 +516,19 @@
       <cite>— So fühlt sich dealISH an</cite>
     </div>
 
-    <div class="hero-store">
-      <a class="store-btn coming" href="#">
-        <span class="store-icon">🍎</span>
-        <span>App Store – coming soon</span>
-      </a>
+    <div class="waitlist">
+      <form class="waitlist-form" id="waitlistForm">
+        <input class="waitlist-input" type="email" name="email" placeholder="deine@email.de" required />
+        <button class="waitlist-btn" type="submit" id="waitlistBtn">Benachrichtigen</button>
+      </form>
+      <div class="waitlist-success" id="waitlistSuccess">
+        ✓ &nbsp;Danke – wir melden uns wenn dealISH live geht.
+      </div>
+      <p class="waitlist-hint">Wir schreiben dir einmal, wenn die App im Store ist. Kein Spam.</p>
     </div>
   </section>
 
-  <!-- MOCKUP -->
-  <div class="mockup-section">
-    <div class="mockup-placeholder">
-      <span class="mockup-placeholder-icon">📱</span>
-      <p class="mockup-placeholder-text">Screenshots folgen in Kürze</p>
-    </div>
-  </div>
+
 
   <!-- FEATURES -->
   <section class="features">
@@ -476,22 +539,22 @@
       <div class="feature-card">
         <span class="feature-emoji">🌤️</span>
         <h3 class="feature-title">Wetter & Saison</h3>
-        <p class="feature-desc">dealISH schaut wie draußen gerade ist und schlägt passende Gerichte vor. Kein Schmorgericht wenn es 28° hat.</p>
+        <p class="feature-desc">Gulasch bei 28 Grad? Nie wieder. dealISH berücksichtigt das Wetter – und schlägt vor, was gerade wirklich passt.</p>
       </div>
       <div class="feature-card">
         <span class="feature-emoji">🏃</span>
         <h3 class="feature-title">Sport berücksichtigt</h3>
-        <p class="feature-desc">Sporttage verändern was du essen solltest. dealISH rechnet das automatisch mit ein.</p>
+        <p class="feature-desc">Wer trainiert, braucht anderes Essen. dealISH weiß wann du Sport hast – damit es sich wirklich auszahlt.</p>
       </div>
       <div class="feature-card">
         <span class="feature-emoji">🍷</span>
         <h3 class="feature-title">Weinempfehlung</h3>
-        <p class="feature-desc">Zum Gericht passende Weinempfehlung – smart, täglich oder manuell. Für die Abende die es brauchen.</p>
+        <p class="feature-desc">Der Abend wäre perfekt. Wenn da nicht noch die Weinfrage wäre. dealISH nimmt sie dir ab.</p>
       </div>
       <div class="feature-card">
         <span class="feature-emoji">🔥</span>
         <h3 class="feature-title">Grilltage</h3>
-        <p class="feature-desc">Warmer Tag, Wochenende, Grill raus. dealISH erkennt das und schlägt Grillgerichte vor wenn es passt.</p>
+        <p class="feature-desc">Wer grillt, kennt das Gefühl wenn das Wetter perfekt ist und man nicht dran gedacht hat. dealISH denkt dran.</p>
       </div>
       <div class="feature-card">
         <span class="feature-emoji">👨‍👩‍👧</span>
@@ -521,7 +584,7 @@
         <div class="how-step">
           <div class="step-number">2</div>
           <h3 class="step-title">Vorschläge bekommen</h3>
-          <p class="step-desc">dealISH schlägt täglich vor was du essen könntest. Abgestimmt auf Wetter, Sport, Haushalt und Saison.</p>
+          <p class="step-desc">dealISH schlägt täglich vor, was du essen könntest – abgestimmt auf Wetter, Sport, Haushalt und Saison.</p>
         </div>
         <div class="how-step">
           <div class="step-number">3</div>
@@ -536,12 +599,45 @@
   <footer>
     <div class="footer-logo">deal<span>ISH</span></div>
     <div class="footer-links">
+      <a href="/agb.html">AGB</a>
       <a href="https://www.iubenda.com/privacy-policy/76317912" target="_blank" rel="noopener">Datenschutzerklärung</a>
       <a href="/impressum.html">Impressum</a>
       <a href="mailto:hallo@getdealish.app">Kontakt</a>
     </div>
-    <p class="footer-copy">© 2026 Dennis Göntgens · Johanniterweg 48 · 41065 Mönchengladbach · hallo@getdealish.app</p>
+    <p class="footer-copy">© 2026 dealISH</p>
   </footer>
 
+  <script>
+    const form = document.getElementById("waitlistForm");
+    const btn  = document.getElementById("waitlistBtn");
+    const success = document.getElementById("waitlistSuccess");
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = "...";
+
+      try {
+        const res = await fetch("https://formspree.io/f/mykollda", {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: new FormData(form),
+        });
+
+        if (res.ok) {
+          form.style.display = "none";
+          success.style.display = "block";
+        } else {
+          btn.disabled = false;
+          btn.textContent = "Benachrichtigen";
+          alert("Etwas ist schiefgelaufen. Bitte versuch es erneut.");
+        }
+      } catch(err) {
+        btn.disabled = false;
+        btn.textContent = "Benachrichtigen";
+        alert("Etwas ist schiefgelaufen. Bitte versuch es erneut.");
+      }
+    });
+  </script>
 </body>
 </html>
