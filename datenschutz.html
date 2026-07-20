@@ -47,7 +47,7 @@
   </nav>
   <main>
     <h1>Datenschutzerkl&auml;rung</h1>
-    <p class="meta">Letzte Aktualisierung: 12. Juni 2026</p>
+    <p class="meta">Letzte Aktualisierung: 13. Juli 2026</p>
     <p>Willkommen bei der Datenschutzerkl&auml;rung von dealISH. Diese Erkl&auml;rung hilft Ihnen zu verstehen, welche Daten wir erheben, warum wir sie erheben und welche Rechte Sie diesbez&uuml;glich haben.</p>
 
     <h2>Inhaltsverzeichnis</h2>
@@ -75,6 +75,7 @@
 
     <h2>2. Arten der erhobenen Daten</h2>
     <p>Zu den personenbezogenen Daten, die diese Anwendung selbstst&auml;ndig oder durch Dritte verarbeitet, geh&ouml;ren: Nutzungsdaten, Tracker sowie &ndash; bei optionaler Nutzung der Datensicherung oder des Premium-Abonnements &ndash; eine anonyme Nutzerkennung und Informationen zum Abostatus.</p>
+    <p>Nutzt der Nutzer zus&auml;tzlich die optionale Haushalts-Funktion (gemeinsame Essensplanung/Einkaufsliste mit anderen Personen), verarbeitet dealISH dar&uuml;ber hinaus echte Kontodaten (E-Mail-Adresse, ggf. ein von Apple einmalig &uuml;bermittelter Name) sowie Inhalte, die innerhalb des Haushalts zwischen den Mitgliedern geteilt werden (Anzeigename, Eintr&auml;ge der gemeinsamen Einkaufsliste) und Push-Benachrichtigungsdaten. Details dazu in Abschnitt 5.</p>
     <p>Die Zahlungsabwicklung f&uuml;r Premium-Abonnements erfolgt ausschlie&szlig;lich &uuml;ber den jeweiligen App-Store (Apple App Store bzw. Google Play Store). Zahlungsdaten wie Kreditkartennummern oder Kontodaten werden von dealISH weder erhoben noch gespeichert.</p>
     <p>Vollst&auml;ndige Details zu jeder Art von verarbeiteten personenbezogenen Daten werden in den daf&uuml;r vorgesehenen Abschnitten dieser Datenschutzerkl&auml;rung oder punktuell durch Erkl&auml;rungstexte bereitgestellt, die vor der Datenerhebung angezeigt werden.</p>
     <p>Personenbezogene Daten k&ouml;nnen vom Nutzer freiwillig angegeben oder, im Falle von Nutzungsdaten, automatisch erhoben werden, wenn diese Anwendung genutzt wird.</p>
@@ -121,6 +122,19 @@
     <p>Auf Android-Ger&auml;ten kann der Nutzer die Datensicherung &uuml;ber Google Sign-In aktivieren. Google &uuml;bermittelt dabei ausschlie&szlig;lich eine stabile, app-spezifische Nutzerkennung (sogenannte &bdquo;Sub&ldquo;-Kennung aus dem OpenID-Connect-Protokoll) &ndash; keine E-Mail-Adresse, keinen Namen und keine weiteren Profilinformationen. Diese Kennung dient ausschlie&szlig;lich der Zuordnung des Backups und wird lokal auf dem Ger&auml;t sowie in der Supabase-Datenbank gespeichert. Eine R&uuml;ckf&uuml;hrung auf die Person ist nicht m&ouml;glich. Die Authentifizierung erfolgt &uuml;ber den OAuth-2.0-Dienst von Google. Verarbeitungsort: USA.</p>
     <p>Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
 
+    <h3>Kontoerstellung und Haushalts-Funktion (Art. 6 Abs. 1 lit. b DSGVO)</h3>
+    <p>Getrennt von der oben beschriebenen, rein anonymen Datensicherungs-Verkn&uuml;pfung bietet dealISH optional eine echte Kontoanmeldung an, sobald ein Nutzer die Haushalts-Funktion nutzen m&ouml;chte (gemeinsame Essensplanung/Einkaufsliste mit weiteren Personen). Die Anmeldung erfolgt &uuml;ber &bdquo;Sign in with Apple&ldquo; oder Google Sign-In, jeweils vermittelt &uuml;ber den Authentifizierungsdienst von Supabase. Dabei wird &ndash; anders als bei der reinen Datensicherung &ndash; eine echte E-Mail-Adresse gespeichert; bei der allerersten Apple-Anmeldung kann zus&auml;tzlich einmalig ein von Apple &uuml;bermittelter Name als Vorschlag f&uuml;r den Anzeigenamen &uuml;bernommen werden. Diese Daten sind zur Bereitstellung der Haushalts-Funktion erforderlich (Vertragserf&uuml;llung, Art. 6 Abs. 1 lit. b DSGVO) und werden bei Supabase (s. o.) gespeichert. Die Anmeldung ist ausschlie&szlig;lich f&uuml;r die Nutzung der Haushalts-Funktion erforderlich &ndash; ohne Haushalts-Funktion bleibt dealISH wie beschrieben ohne echte Kontoerstellung nutzbar. Dieselbe Anmeldung steht &ndash; f&uuml;r den Fall einer Konto-L&ouml;schung ohne installierte App &ndash; auch &uuml;ber eine Web-Seite zur Verf&uuml;gung (s. &bdquo;L&ouml;schung des Kontos&ldquo; unten).</p>
+
+    <h3>Geteilte Inhalte im Haushalt</h3>
+    <p>Tritt ein Nutzer einem Haushalt bei (freiwillig, per Einladungscode eines bestehenden Mitglieds), werden folgende Inhalte f&uuml;r die &uuml;brigen Mitglieder DESSELBEN Haushalts sichtbar &ndash; nicht &ouml;ffentlich und nicht f&uuml;r Dritte: der gew&auml;hlte Anzeigename, der Haushaltsname, die Eintr&auml;ge der gemeinsamen Einkaufsliste (inkl. einer Zuordnung, welches Mitglied einen Eintrag angelegt hat) sowie optional angegebene Sport-/Abwesenheitstage f&uuml;r die Essensplanung. Rechtsgrundlage ist die Vertragserf&uuml;llung (Art. 6 Abs. 1 lit. b DSGVO) &ndash; die Sichtbarkeit dieser Inhalte innerhalb des selbstgew&auml;hlten Haushalts ist Kernbestandteil der Funktion, der der Nutzer durch aktiven Beitritt zustimmt. Verlässt ein Mitglied den Haushalt oder l&ouml;scht sein Konto, bleiben die von ihm angelegten Eintr&auml;ge der Einkaufsliste f&uuml;r den weiterbestehenden Haushalt erhalten &ndash; lediglich die Zuordnung, wer den Eintrag angelegt hat, wird entfernt (s. &bdquo;L&ouml;schung des Kontos&ldquo; unten).</p>
+
+    <h3>Push-Benachrichtigungen (Expo, Expo Technologies Inc., USA)</h3>
+    <p>Ist die Haushalts-Funktion aktiv und hat der Nutzer Push-Benachrichtigungen in den Einstellungen zugelassen (jederzeit widerrufbar), wird ein ger&auml;tespezifisches Push-Token &uuml;ber den Dienst Expo verarbeitet, um Mitglieder des eigenen Haushalts &uuml;ber &Auml;nderungen zu informieren (z. B. &bdquo;Einkaufsliste aktualisiert&ldquo;). Das Push-Token ist an das jeweilige Ger&auml;t und Konto gebunden, wird bei Supabase gespeichert und ausschlie&szlig;lich zum Versand dieser Haushalts-Benachrichtigungen genutzt &ndash; kein Tracking, keine Werbe-Zwecke.</p>
+    <p>Weitere Informationen: <a href="https://expo.dev/privacy" target="_blank" rel="noopener">expo.dev/privacy</a></p>
+
+    <h3>L&ouml;schung des Kontos</h3>
+    <p>Nutzer, die eine echte Kontoanmeldung (s. o.) angelegt haben, k&ouml;nnen ihr Konto jederzeit endg&uuml;ltig l&ouml;schen &ndash; entweder in der App (Einstellungen &rarr; Konto &amp; Familie &rarr; &bdquo;Konto l&ouml;schen&ldquo;) oder, falls die App nicht mehr installiert ist, &uuml;ber <a href="https://dealish.de/konto-loeschen.html">dealish.de/konto-loeschen.html</a>. Die L&ouml;schung erfolgt sofort und ohne Frist (kein Soft-Delete): das Konto, s&auml;mtliche Haushalts-Mitgliedschaften sowie die Push-Token des Nutzers werden endg&uuml;ltig entfernt. War der Nutzer Owner oder Planverantwortlicher eines Haushalts mit weiteren Mitgliedern, geht diese Rolle automatisch auf das dienst&auml;lteste verbleibende Mitglied &uuml;ber; war der Nutzer das letzte Mitglied, wird der gesamte Haushalt samt aller geteilten Daten gel&ouml;scht. In einem weiterbestehenden Haushalt bleiben von ihm angelegte Eintr&auml;ge der Einkaufsliste erhalten, lediglich anonymisiert (s. &bdquo;Geteilte Inhalte im Haushalt&ldquo; oben). Lokale App-Daten auf dem Ger&auml;t des Nutzers (Essensplan, Einstellungen) sind von der Kontol&ouml;schung nicht betroffen und bleiben erhalten.</p>
+
     <h2>6. Weitere Informationen f&uuml;r Nutzer in der Europ&auml;ischen Union</h2>
     <h3>Rechtsgrundlagen der Verarbeitung</h3>
     <p>Der Anbieter darf personenbezogene Daten von Nutzern nur dann verarbeiten, wenn einer der folgenden Punkte zutrifft:</p>
@@ -146,7 +160,7 @@
       <li>Auskunft bez&uuml;glich ihrer Daten zu erhalten.</li>
       <li>Die Richtigkeit ihrer Daten &uuml;berpr&uuml;fen und berichtigen zu lassen.</li>
       <li>Einschr&auml;nkung der Verarbeitung ihrer Daten zu verlangen.</li>
-      <li>L&ouml;schung oder anderweitiges Entfernen der personenbezogenen Daten zu verlangen.</li>
+      <li>L&ouml;schung oder anderweitiges Entfernen der personenbezogenen Daten zu verlangen (f&uuml;r das dealISH-Konto direkt selbst durchf&uuml;hrbar, s. Abschnitt 5 &bdquo;L&ouml;schung des Kontos&ldquo;).</li>
       <li>Ihre Daten zu erhalten und an einen anderen Verantwortlichen &uuml;bertragen zu lassen.</li>
       <li>Beschwerde bei der zust&auml;ndigen Aufsichtsbeh&ouml;rde einzureichen.</li>
     </ul>
